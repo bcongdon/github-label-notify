@@ -10,7 +10,7 @@ exports.data = function() {
       return data
   }
   catch(err){
-    console.log("ERROR: Unable to load watch_list.json")
+    console.log("ERROR: Unable to loading watch_list.json")
     return []
   }
 }

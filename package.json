@@ -4,7 +4,8 @@
   "description": "Get notified about new issues with specific label.",
   "dependencies": {
     "github": "^0.2.4",
-    "ifttt": "^0.1.2"
+    "node-ifttt-maker": "^0.1.2",
+    "node-persist": "0.0.11"
   },
   "devDependencies": {},
   "scripts": {
