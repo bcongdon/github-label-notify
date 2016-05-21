@@ -33,18 +33,14 @@ var prompts = [
 
 function doPrompt() {
     inquirer.prompt(prompts).then(function(answers) {
-        var data = watch_list.data();
-        var parsed_labels = answers.labels.split(',')
+        var parsed_labels = answers.labels.split(',');
         parsed_labels = parsed_labels.map(function(label){
             return trim(label);
         });
-        new_entry = {
-            'user': answers.user,
-            'repo': answers.repo,
-            'labels': parsed_labels
-        }
-        data.push(new_entry);
-        watch_list.save(data);
+        watch_list.create_entry(answers.user,
+            answers.repo,
+            parsed_labels);
+
         if(answers.add_another){
             doPrompt();
         }
