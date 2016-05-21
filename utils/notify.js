@@ -1,22 +1,21 @@
 var fs = require('fs');
-var file = __dirname + '/../config.json';
 var IFTTT = require('node-ifttt-maker');
 
+const Configstore = require('configstore');
+const pkg = require('./../package.json');
+const config = new Configstore(pkg.name);
+
 var exports = module.exports;
-var data = {}
-try{
-  data = fs.readFileSync(file, 'utf8');
-  data = JSON.parse(data);
-}
-catch(err){
-    console.log("ERROR: Unable to loading config.json")
+
+if(!config.get("ifttt_key")){
+    console.log("ERROR: No IFTTT key found. Please run 'glnotify setup'.")
 }
 
-exports.ifttt = new IFTTT(data.ifttt)
+exports.ifttt = new IFTTT(config.get('ifttt_key'));
 
 exports.ifttt_notify = function(param1, param2, param3) {
     exports.ifttt.request({
-        event: data.event_name,
+        event: 'new_github_issue',
         method: 'GET',
         params:{
             'value1': param1,

@@ -1,11 +1,17 @@
 {
-  "name": "github-notify",
+  "name": "github-label-notify",
   "version": "1.0.0",
   "description": "Get notified about new issues with specific label.",
   "dependencies": {
+    "commander": "^2.9.0",
+    "configstore": "^2.0.0",
     "github": "^0.2.4",
+    "inquirer": "^1.0.2",
     "node-ifttt-maker": "^0.1.2",
     "node-persist": "0.0.11"
+  },
+  "bin": {
+    "glnotify": "./glnotify.js"
   },
   "devDependencies": {},
   "scripts": {
@@ -13,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://benjamincongdon@github.com/benjamincongdon/github-notify.git"
+    "url": "git+https://benjamincongdon@github.com/benjamincongdon/github-label-notify.git"
   },
   "author": "Benjamin Congdon",
   "license": "MIT",

@@ -1,10 +1,10 @@
-# github-notify
+# github-label-notify
 > Get notified about new issues with specific label :mailbox:
 
 
 ### IFTTT Message Template
 
-#### Subject:
+##### Subject:
 
 ```
 [Github-Notify] New Issue with labels: {{Value2}}
