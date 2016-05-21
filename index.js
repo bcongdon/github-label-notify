@@ -4,7 +4,16 @@ var storage = require('node-persist');
 var github = require('./utils/github.js')
 
 function notify_on_issues(issues){
-    console.log(issues)
+    issues.forEach(function(curr){
+        var labels = []
+        curr.labels.forEach(function(l){
+            labels.push(l.name)
+        });
+        notify.ifttt_notify(curr.title + " (" + curr.number + ")",
+            labels.join(", "),
+            curr.html_url
+        );
+    });
 }
  
 function run_check(initial){
@@ -20,4 +29,4 @@ function run_check(initial){
     }
 }
 
-run_check(true);
+run_check();

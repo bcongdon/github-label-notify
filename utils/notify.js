@@ -27,5 +27,8 @@ exports.ifttt_notify = function(param1, param2, param3) {
         if(err){
             throw(err);
         }
+        else {
+            console.log("Sent IFTTT notification.")
+        }
     });
 }

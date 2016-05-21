@@ -8,6 +8,11 @@ var github = new GitHubApi({
 
 var exports = module.exports
 
+reset_storage = function() {
+    storage.initSync();
+    storage.clearSync();
+}
+
 exports.get_new_issues = function(usr, repo, labels, callback) {
     github.issues.repoIssues({
         user: usr,
@@ -27,13 +32,8 @@ exports.get_new_issues = function(usr, repo, labels, callback) {
                     new_issues.push(res[i])
                     dict[res[i].html_url] = res[i]
                 }
-                console.log(dict)
             }
-            storage.setItem("github_issues", dict)
+            storage.setItem("github_issues", dict);
             callback(new_issues);
     });
-}
-
-exports.reset_storage = function() {
-    storage.deleteItem("github_issues")
 }
