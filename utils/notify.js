@@ -27,7 +27,10 @@ exports.ifttt_notify = function(param1, param2, param3) {
             throw(err);
         }
         else {
-            console.log("Sent IFTTT notification.")
+            console.log("* Sent IFTTT notification: ")
+            console.log("  '" + param1 + "'");
+            console.log("  '" + param2 + "'");
+            console.log("  '" + param3 + "'");
         }
     });
 }

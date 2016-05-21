@@ -5,11 +5,13 @@
   "dependencies": {
     "commander": "^2.9.0",
     "configstore": "^2.0.0",
+    "forever": "^0.15.1",
     "github": "^0.2.4",
     "inquirer": "^1.0.2",
     "jsonfile": "^2.3.1",
     "node-ifttt-maker": "^0.1.2",
     "node-persist": "0.0.11",
+    "node-schedule": "^1.1.0",
     "trim": "0.0.1"
   },
   "bin": {

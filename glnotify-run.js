@@ -1,3 +1,3 @@
-var checker = require('./utils/checker.js')
+var forever = require('forever')
 
-checker.run_check()
+forever.start('./run.js', {'uid': 'glnotify'})
