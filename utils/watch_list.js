@@ -28,8 +28,8 @@ exports.create_entry = function(user, repo, labels) {
     }
     // Remove duplicate repos
     data = data.filter(function(element){
-        return !(element.user == new_entry.user &&
-                    element.repo == new_entry.repo)
+        return !(element.user === new_entry.user &&
+                    element.repo === new_entry.repo)
     })
     data.push(new_entry);
     exports.save(data);
