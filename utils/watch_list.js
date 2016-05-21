@@ -1,4 +1,5 @@
-var file = __dirname + '/../watch_list.json';
+var path = require('path')
+var file = path.join(__dirname, '..','watch_list.json');
 var jsonfile = require('jsonfile');
 var trim = require('trim')
 

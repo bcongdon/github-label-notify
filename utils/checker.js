@@ -19,15 +19,19 @@ function notify_on_issues(issues){
     });
 }
 
+
+
 exports.run_check = function(initial){
+    function process(res){
+        if (initial) return;
+        if (res) notify_on_issues(res);
+    };
     for(var i = 0; i < watch_list.data().length; i++){
         repo_entry = watch_list.data()[i];
         github.get_new_issues(repo_entry.user,
             repo_entry.repo,
             repo_entry.labels[0],
-            function(res){
-                if (initial) return;
-                if (res) notify_on_issues(res);
-            });
+            process);
+
     }
 }

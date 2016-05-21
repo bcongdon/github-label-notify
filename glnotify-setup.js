@@ -30,8 +30,8 @@ inquirer.prompt(prompts).then(function(answers) {
         }
     }
   }, function (err) {
-      if (err) {;
-        console.log("Could not validate credentials.")
+      if (err) {
+        console.log("Could not validate credentials.");
       } else {
         config.set("ifttt_key", answers.ifttt_key);
         console.log("Credentials saved.");
