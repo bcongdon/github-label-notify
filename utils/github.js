@@ -25,7 +25,7 @@ exports.get_new_issues = function(usr, repo, labels, callback) {
             for(var i = 0; i < res.length; i++){
                 if(!(res[i].html_url in dict)){
                     new_issues.push(res[i])
-                    dict[res[i].html_url] = res[i]
+                    dict[res[i].html_url] = true
                 }
             }
             storage.setItem("github_issues", dict);
