@@ -1,16 +1,24 @@
 var path = require('path')
 var file = path.join(__dirname, '..','watch_list.json');
 var jsonfile = require('jsonfile');
-var trim = require('trim')
+var trim = require('trim');
+var fs = require('fs');
 
 var exports = module.exports;
 
 exports.data = function() {
+  // Create file if doesn't exist
   try{
-      return jsonfile.readFileSync(file);
+    fs.accessSync(file, fs.F_OK)
   }
   catch(err){
-    console.log("ERROR: Unable to loading watch_list.json")
+    jsonfile.writeFileSync(file, [])
+  }
+  try{
+    return jsonfile.readFileSync(file);
+  }
+  catch(err){
+    console.log("ERROR: Unable to load watch_list.json")
     return []
   }
 }

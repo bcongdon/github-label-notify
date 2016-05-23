@@ -10,7 +10,8 @@
 4. Run `glnotify setup` and enter your IFTTT key.
 5. Run `glnotify add` to add repositories and labels to your watch list.
 	* Alternatively, you can directly edit `watch_list.json`
-6. Run `glnotify` to start listening for new Github issues per your watchlist.
+6. Run `glnotify init` to mark all current issues as 'read'. This is **important**. If you do not, running `glnotify` will spam you with a backlog of notifications.
+7. Run `glnotify` to start listening for new Github issues per your watchlist.
 
 ## IFTTT Recipe Template
 

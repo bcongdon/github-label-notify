@@ -1,6 +1,5 @@
 var inquirer = require('inquirer');
 var IFTTT = require('node-ifttt-maker');
-var checker = require('./utils/checker.js')
 
 const Configstore = require('configstore');
 const pkg = require('./package.json');
@@ -36,7 +35,7 @@ inquirer.prompt(prompts).then(function(answers) {
         config.set("ifttt_key", answers.ifttt_key);
         console.log("Credentials saved.");
         console.log("Running initial issue check.");
-        checker.run_check(true);
+
         console.log("Completed setup.")
       }
   });
