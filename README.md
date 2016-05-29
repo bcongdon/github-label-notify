@@ -1,6 +1,7 @@
 # github-label-notify
 [![npm version](https://badge.fury.io/js/github-label-notify.svg)](https://badge.fury.io/js/github-label-notify)
 [![Code Climate](https://codeclimate.com/github/benjamincongdon/github-label-notify/badges/gpa.svg)](https://codeclimate.com/github/benjamincongdon/github-label-notify)
+[![Build Status](https://travis-ci.org/bcongdon/github-label-notify.svg?branch=master)](https://travis-ci.org/bcongdon/github-label-notify)
 > :mailbox: Get notified about new issues with specific label
 
 ## Installation
