@@ -17,7 +17,7 @@ exports.data = function() {
 
 exports.save = function(new_data) {
     storage.initSync();
-    storage.setItem('watch_list', new_data);
+    storage.setItemSync('watch_list', new_data);
 }
 
 exports.create_entry = function(user, repo, labels) {
