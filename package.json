@@ -17,7 +17,10 @@
   "bin": {
     "glnotify": "./glnotify.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "assert": "^1.4.0",
+    "chai": "^3.5.0"
+  },
   "scripts": {
     "test": "mocha --recursive"
   },

@@ -19,10 +19,8 @@ function notify_on_issues(issues){
     });
 }
 
-
-
 exports.run_check = function(initial){
-    function process(res){
+    function process_issues(res){
         if (initial) return;
         if (res) notify_on_issues(res);
     }
@@ -31,7 +29,7 @@ exports.run_check = function(initial){
         github.get_new_issues(repo_entry.user,
             repo_entry.repo,
             repo_entry.labels[0],
-            process);
+            process_issues);
 
     }
 }
